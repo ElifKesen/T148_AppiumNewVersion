@@ -27,7 +27,7 @@ public class Driver {
                     .setPlatformName("Android")
                     .setPlatformVersion("10.0")
                     .setAutomationName("UiAutomator2")
-                    .setApp("C:\\Users\\elifk\\IdeaProjects\\T148_AppiumNewVersion\\Apps\\Teknosa – Alisveris, Teknoloji_7.2.6_APKPure.apk");
+                    .setApp("C:\\Users\\elifk\\IdeaProjects\\T148_AppiumNewVersion\\Apps\\Teknosa – Alisveris, Teknoloji_7.3.6_APKPure.apk");
 
 
             if (ConfigReader.getProperty("platformName").equals("Android")) {
