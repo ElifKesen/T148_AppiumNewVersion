@@ -1,3 +1,4 @@
+@teknosa
 Feature: Kullanici uygulama gorevlerini yerine getirir
   Scenario: Kullanici uygulama uzerinde ilgili bolumu test eder
     Given Uygulama baslatilir
@@ -20,7 +21,7 @@ Feature: Kullanici uygulama gorevlerini yerine getirir
       When siralama yapilirak "Artan Fiyat" secilir
       Then fiyatlarin artan duzende oldugu test edilir
 
-  @teknosa
+
     Scenario: Kullanici ekran fotografi alma gorevini yerine getirir
       Given Uygulama baslatilir
       When Ilk ekran bolumunden atlaya tiklanir
