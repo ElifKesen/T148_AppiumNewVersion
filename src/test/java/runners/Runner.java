@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Feature",
         glue = "stepDefinitions",
         tags = "@teknosa",
-        dryRun = false
+        dryRun =false
 )
 
 public class Runner {

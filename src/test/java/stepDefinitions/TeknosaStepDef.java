@@ -3,9 +3,12 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.TeknosaPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.io.IOException;
 
 public class TeknosaStepDef {
 
@@ -52,10 +55,45 @@ public class TeknosaStepDef {
         page.filtrelenmisMarkaKutusu.click();
         ReusableMethods.bekle(3);
         page.SonuclariGosterButonu.click();
+        ReusableMethods.bekle(3);
+    }
+
+    @When("siralama yapilirak {string} secilir")
+    public void siralama_yapilirak_secilir(String siralamaSecimi) {
+        page.SiralaButonu.click();
+        ReusableMethods.bekle(3);
+        ReusableMethods.scrollWithUiScrollableAndClick(siralamaSecimi);
+        ReusableMethods.bekle(3);
+    }
+
+    @Then("fiyatlarin artan duzende oldugu test edilir")
+    public void fiyatlarin_artan_duzende_oldugu_test_edilir() {
+       String artanDusukFiyat =page.artanDusukFiyat.getText();
+       artanDusukFiyat=artanDusukFiyat.replaceAll("\\D","");
+
+        ReusableMethods.bekle(3);
+       ReusableMethods.dikeyKaydirma(Driver.getAndroidDriver(),0.80,0.20, 0.50, 100);
+        ReusableMethods.bekle(3);
+
+        String artanYuksekFiyat =page.artanYuksekFiyat.getText();
+        artanYuksekFiyat=artanYuksekFiyat.replaceAll("\\D","");
+
+        Assert.assertTrue(Integer.parseInt(artanYuksekFiyat)>Integer.parseInt(artanDusukFiyat));
+    }
+
+    @When("kategoriler bolumunden {string} bolumune tiklanir")
+    public void kategoriler_bolumunden_bolumune_tiklanir(String kategori) {
+        ReusableMethods.scrollWithUiScrollableAndClick(kategori);
+        ReusableMethods.bekle(3);
 
     }
 
+    @Then("Kullanici ekran fotografi almak icin {string} secer")
+    public void kullanici_ekran_fotografi_almak_icin_secer(String EkranGoruntusu) throws IOException {
+        ReusableMethods.bekle(3);
+        ReusableMethods.screenShotElement(EkranGoruntusu);
 
+    }
 
 }
 

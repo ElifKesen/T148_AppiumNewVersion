@@ -32,6 +32,15 @@ public class TeknosaPage {
     @FindBy(xpath = "//*[@text='Sonuçları Göster']")
     public WebElement SonuclariGosterButonu;
 
+    @FindBy(xpath = "//*[@text='Sırala']")
+    public WebElement SiralaButonu;
+
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[8]")
+    public WebElement artanDusukFiyat;
+
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[10]")
+    public WebElement artanYuksekFiyat;
+
 
 
 
